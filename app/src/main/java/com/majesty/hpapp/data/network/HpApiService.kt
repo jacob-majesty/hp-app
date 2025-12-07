@@ -6,12 +6,12 @@ import retrofit2.http.Path
 
 interface HpApiService {
 
-    @GET("api/character/{id}")
+    @GET("character/{id}")
     suspend fun getCharacterById(@Path("id") characterId: String): List<Character>
 
-    @GET("api/characters/staff")
+    @GET("characters/staff")
     suspend fun getHogwartsStaff(): List<Character>
 
-    @GET("api/characters/house/{house}")
+    @GET("characters/house/{house}")
     suspend fun getHouseStudents(@Path("house") houseName: String): List<Character>
 }
