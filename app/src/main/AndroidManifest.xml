@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HPApp">
+        <activity android:name=".ui.character_details.CharacterDetailActivity" />
+        <activity android:name=".ui.staff_list.StaffListActivity" />
+        <activity android:name=".ui.house_students.HouseStudentsActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
