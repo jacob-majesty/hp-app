@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Harry Potter App - Menu Principal"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/buttonSearchById"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. Buscar Personagem por ID"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/buttonListStaff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2. Listar Professores (Staff)"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/buttonListStudents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3. Buscar Estudantes por Casa"
+        android:layout_marginBottom="16dp"/>
+
+</LinearLayout>
