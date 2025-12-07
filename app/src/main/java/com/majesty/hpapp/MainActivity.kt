@@ -1,47 +1,35 @@
 package com.majesty.hpapp
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.majesty.hpapp.ui.theme.HPAppTheme
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.majesty.hpapp.ui.character_details.CharacterDetailActivity
+import com.majesty.hpapp.ui.house_students.HouseStudentsActivity
+import com.majesty.hpapp.ui.staff_list.StaffListActivity
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            HPAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+        setContentView(R.layout.activity_main)
+
+        // Botão para Buscar Personagem por ID
+        findViewById<Button>(R.id.buttonSearchById).setOnClickListener {
+            val intent = Intent(this, CharacterDetailActivity::class.java)
+            startActivity(intent)
         }
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        // Botão para Listar Professores
+        findViewById<Button>(R.id.buttonListStaff).setOnClickListener {
+            val intent = Intent(this, StaffListActivity::class.java)
+            startActivity(intent)
+        }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    HPAppTheme {
-        Greeting("Android")
+        // Botão para Listar Estudantes por Casa
+        findViewById<Button>(R.id.buttonListStudents).setOnClickListener {
+            val intent = Intent(this, HouseStudentsActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
